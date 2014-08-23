@@ -34,9 +34,10 @@ with sqlite3.connect("new.db") as connection:
     c.executemany("insert into regions values(?, ?)", cities)
 
     # Select all data from new table
-    c.execute("select * from regions")
+    c.execute("select * from regions order by asc")
     rows = c.fetchall()
 
     # Show all data in screen
     for r in rows:
         print r[0], r[1]
+
